@@ -32,10 +32,6 @@ int main(void)
 		{
 			printf("%d ", i);
 		}
-		if (i != 0)
-		{
-			printf(" ");
-		}
 	}
 
 	printf("\n");
