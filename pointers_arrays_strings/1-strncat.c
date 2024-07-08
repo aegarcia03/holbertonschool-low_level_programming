@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.>
+#include <stdio.h>
 /**
  * _strncat - concatenates two strings.
  * @src: pointer to the source string.
@@ -11,11 +11,21 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	//find the end of dest
-	for (i = 0
-	//copy up to n bytes form src to dest
-	//null terminate if is necessary ( src does not need to be null-terminated if it contains n or more byte)
-	//return: dest
+	char *temp = dest;
 
-	return (dest);
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	while (*src != '\0' && n > 0)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		n--;
+	}
+
+	*dest = '\0';
+
+	return (temp);
 }
