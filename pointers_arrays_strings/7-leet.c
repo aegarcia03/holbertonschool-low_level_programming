@@ -9,12 +9,19 @@
 char *leet(char *s)
 {
 	char *ptr = s;
-	int i = 0;
-	char characters[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	char leet[] = {4, 3, 0, 7, 1};
+	char map[256] = {0};
+
+	map['a'] = map['A'] = '4';
+	map['e'] = map['E'] = '3';
+	map['o'] = map['O'] = '0';
+	map['t'] = map['T'] = '7';
+	map['l'] = map['L'] = '1';
 
 	while (*s != '\0')
 	{
+		if (map[(unsigned char)*s])
+		{	*s = map[(unsigned char)*s];
+		}
 		s++;
 	}
 	return (ptr);
