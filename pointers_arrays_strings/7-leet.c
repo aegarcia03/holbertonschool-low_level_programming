@@ -15,14 +15,6 @@ char *leet(char *s)
 
 	while (*s != '\0')
 	{
-		for (i = 0; i < 5; i++)
-		{
-			if (*s == characters[i] || *s == characters[i] - 32)
-			{
-				*s = leet[i];
-				break;
-			}
-		}
 		s++;
 	}
 	return (ptr);
