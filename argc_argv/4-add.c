@@ -1,6 +1,7 @@
 #include "main.h"
 #include  <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - a program that adds positive numbers.
  *
@@ -13,24 +14,32 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, j;
+	unsigned int sum = 0;
+	char *str;
 
-	for (i = 1; i < argc; i++)
-	{	
-		if (argc < 48 && argc > 57)
+	if (argc > 1)
+	{
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+			str = argv[i];
+
+			for (j = 0; str[j] != '\0'; j++)
+			{
+				if (str[j] < '0' || str[j] > '9')
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+
+			sum += atoi(str);
 		}
-		else if(argc == 0)
-		{
-			printf("0");
-		}
-		
-		sum += atoi (argv[i]);
+		printf("%d\n", sum);
 	}
-	
-	printf("%d\n", sum);
-
+	else
+	{
+		printf("0\n");
+	}
 	return (0);
 }
