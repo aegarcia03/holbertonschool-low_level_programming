@@ -4,7 +4,7 @@
 
 /**
  * flip_bits - flip to get from one number to another.
- * @n: the first number 
+ * @n: the first number
  * @m: the second number
  *
  * Return: the number of bits you would need to flip
@@ -12,9 +12,15 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned long result;
-	unsigned int i;
+	unsigned int i = 0;
 
 	result = (n ^ m);
 
-	return (result); 
+	while (result > 0)
+	{
+		i += (result & 1);
+		result >>= 1;
+	}
+
+	return (i);
 }
