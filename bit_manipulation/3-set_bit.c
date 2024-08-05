@@ -7,7 +7,7 @@
  * @n: number
  * @index: index starts from 0 or the bit you want to set.
  *
- * Returns: 1 if it works, -1 otherwise.
+ * Return: 1 if it works, -1 otherwise.
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
